@@ -38,27 +38,6 @@ Analyzed nodes based on:
 2. **Timeout management**: Fast failure detection
 3. **Thread pooling**: Reusable threads for handling participants
 
-### Protocol Flow
-```
-Coordinator              Participant1    Participant2    Participant3
-    |                          |               |               |
-    |------ PREPARE ---------->|               |               |
-    |------ PREPARE -----------------------   |               |
-    |------ PREPARE ---------------------------------          |
-    |                          |               |               |
-    |<----- VOTE-YES ---------|               |               |
-    |<----- VOTE-YES -------------------------|               |
-    |<----- VOTE-YES --------------------------------------|
-    |                          |               |               |
-    |------ COMMIT ----------->|               |               |
-    |------ COMMIT ------------------------->|               |
-    |------ COMMIT ------------------------------------>|
-    |                          |               |               |
-    |<----- ACK --------------|               |               |
-    |<----- ACK -----------------------------|               |
-    |<----- ACK -------------------------------------------|
-```
-
 ## Part (c): Deadlock Resolution - Wait-Die Scheme
 
 ### Why Wait-Die?
